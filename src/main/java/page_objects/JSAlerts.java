@@ -13,7 +13,7 @@ public class JSAlerts extends PageObject {
     @FindBy(tagName = "button")
     private WebElement alertJS;
 
-    public void clickOnButton(){
-         alertJS.click();
+    public void clickOnButton() {
+        alertJS.click();
     }
 }

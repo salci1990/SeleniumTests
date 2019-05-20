@@ -27,13 +27,12 @@ public class SeleniumRuner {
     private KeyPress keyPress;
 
     @BeforeClass
-    public void setUp(){
+    public void setUp() {
         System.setProperty("webdriver.chrome.driver", "lib/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("disable-infobars");
         driver = new ChromeDriver(options);
         wait = new WebDriverWait(driver, 10);
-
 
         forgotPassword = new ForgotPassword(driver);
         mainPage = new MainPage(driver);
@@ -51,7 +50,7 @@ public class SeleniumRuner {
 //    }
 
     @AfterClass
-    public void tearDown(){
+    public void tearDown() {
         sleep(2000);
         driver.quit();
     }
@@ -78,8 +77,9 @@ public class SeleniumRuner {
 
         assertThat(formAuthentication.isErrorDisplayd()).isTrue();
     }
+
     @Test
-    public void hoverTest(){
+    public void hoverTest() {
         driver.get("https://the-internet.herokuapp.com/");
         mainPage.clickHoversLink();
         assertThat(hovers.figure().isDisplayed()).isTrue();
@@ -89,18 +89,18 @@ public class SeleniumRuner {
         assertThat(hovers.userNameTest().isEnabled());
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("View profile")));
     }
+
     @Test
-    public void keyPressTest(){
+    public void keyPressTest() {
         driver.get("https://the-internet.herokuapp.com/");
         mainPage.clickKeyPressLink();
         Actions action = new Actions(driver);
         action.sendKeys(Keys.SPACE).build().perform();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("result")));
         action.sendKeys(Keys.ENTER).build().perform();
-
-
     }
-//    @Test
+
+    //    @Test
 //    public void dragAndDropTest(){
 //        driver.get("https://the-internet.herokuapp.com/");
 //        mainPage.clickDragAndDropLink();
@@ -110,27 +110,23 @@ public class SeleniumRuner {
 //
 //    }
     @Test
-    public void jsAlertTest(){
+    public void jsAlertTest() {
         driver.get("https://the-internet.herokuapp.com/");
         mainPage.clickAlertJSLink();
         jsAlerts.clickOnButton();
         wait.until(ExpectedConditions.alertIsPresent());
         driver.switchTo().alert().accept();
-
     }
 
     @Test
-    public void dynamicLoadingTest(){
+    public void dynamicLoadingTest() {
         driver.get("https://the-internet.herokuapp.com/");
         mainPage.clickDynamicLoadingLink();
         dynamicLoading.clickExample();
         dynamicLoading.clickStart();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("finish")));
         dynamicLoading.helloWorldFinder();
-
     }
-
-
 //
 //        WebElement element = driver.findElement(By.className("main-links-a.switch-mail"));
 //        element.click();
@@ -149,7 +145,6 @@ public class SeleniumRuner {
 //        assertThat(checkbox2.isSelected()).isFalse();
 
 
-
     private static void sleep(int timeout) {
         try {
             Thread.sleep(timeout);
@@ -159,8 +154,3 @@ public class SeleniumRuner {
 
     }
 }
-
-
-
-
-

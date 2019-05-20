@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class MainPage extends PageObject {
 
-    public MainPage(WebDriver driver){
+    public MainPage(WebDriver driver) {
         super(driver);
     }
 
@@ -32,31 +32,31 @@ public class MainPage extends PageObject {
     @FindBy(linkText = "Forgot Password")
     private WebElement forgotPasswordLink;
 
-    public void clickHoversLink(){
+    public void clickHoversLink() {
         hoversLink.click();
     }
 
-    public void clickForgotPasswordLink(){
+    public void clickForgotPasswordLink() {
         forgotPasswordLink.click();
     }
 
-    public void clickFormAuthenticationLink(){
+    public void clickFormAuthenticationLink() {
         formAuthenticationLink.click();
     }
 
-    public void clickDragAndDropLink(){
-       dragAndDropLink.click();
+    public void clickDragAndDropLink() {
+        dragAndDropLink.click();
     }
 
-    public void clickAlertJSLink(){
+    public void clickAlertJSLink() {
         alertJSLink.click();
     }
 
-    public void clickDynamicLoadingLink(){
+    public void clickDynamicLoadingLink() {
         dynamicLoadingLink.click();
     }
 
-    public void clickKeyPressLink(){
+    public void clickKeyPressLink() {
         keyPresLink.click();
     }
 

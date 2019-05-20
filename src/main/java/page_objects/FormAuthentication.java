@@ -16,18 +16,18 @@ public class FormAuthentication extends PageObject {
     @FindBy(id = "password")
     private WebElement passwordField;
 
-    @FindBy(className="fa")
+    @FindBy(className = "fa")
     private WebElement loginButton;
 
-    @FindBy(id="flash")
+    @FindBy(id = "flash")
     private WebElement errorElement;
 
-    public Boolean isErrorDisplayd(){
+    public Boolean isErrorDisplayd() {
         return errorElement.isEnabled();
 
     }
 
-    public FormAuthentication enterUserName(String username){
+    public FormAuthentication enterUserName(String username) {
         userNameField.sendKeys(username);
         return this;
     }
@@ -37,7 +37,7 @@ public class FormAuthentication extends PageObject {
         return this;
     }
 
-    public FormAuthentication clickLoginButton(){
+    public FormAuthentication clickLoginButton() {
         loginButton.click();
         return this;
     }

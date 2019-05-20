@@ -4,13 +4,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class Hovers extends PageObject{
+public class Hovers extends PageObject {
 
     public Hovers(WebDriver driver) {
         super(driver);
     }
 
-    @FindBy(id="figcaption")
+    @FindBy(id = "figcaption")
     private WebElement figureCaption;
 
     @FindBy(className = "figure")
@@ -26,7 +26,7 @@ public class Hovers extends PageObject{
         return userName;
     }
 
-    public WebElement getViewProfileTest(){
+    public WebElement getViewProfileTest() {
         return viewProfile;
     }
 

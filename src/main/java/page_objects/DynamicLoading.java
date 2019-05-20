@@ -19,15 +19,15 @@ public class DynamicLoading extends PageObject {
     @FindBy(id = "finish")
     private WebElement finishElement;
 
-    public void clickStart(){
+    public void clickStart() {
         start.click();
     }
 
-    public void clickExample(){
+    public void clickExample() {
         example1.click();
     }
 
-    public Boolean helloWorldFinder(){
-       return finishElement.isDisplayed();
+    public Boolean helloWorldFinder() {
+        return finishElement.isDisplayed();
     }
 }
